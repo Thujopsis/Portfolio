@@ -1,18 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
-    <meta charset="UTF-8">
     <title>ログイン成功画面</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <style type="text/css">
+        form {
+            border-style: solid;
+            border-color: black;
+            border-width: 1px;
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+    <script th:href="@{webjars/jquery/3.5.0/js/jquery.min.js}"></script>
+    <script th:href="@{webjars/bootstrap/4.4.1-1/js/bootstrap.min.js}"></script>
+    <link th:href="@{webjars/bootstrap/4.4.1-1/css/bootstrap.min.css}" rel="stylesheet"/>
 </head>
 <body>
 ログイン後の画面のテスト。
 
 <p>ようこそ<span sec:authentication="principal.username"></span>さん</p>
 
-<div sec:authorize="hasRole('ADMIN')">
+<div sec:authorize="hasRole('admin')">
     <p>今は<b>ADMIN</b>権限でログインしています。</p>
 </div>
-<div sec:authorize="hasRole('USER')">
+<div sec:authorize="hasRole('user')">
     <p>今は<b>USER</b>権限でログインしています。</p>
 </div>
 </body>

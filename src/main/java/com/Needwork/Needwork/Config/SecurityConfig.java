@@ -1,6 +1,5 @@
 package com.Needwork.Needwork.Config;
 
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -12,7 +11,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity web)throws Exception{
         web.authorizeRequests()
-                .antMatchers("/css/**", "/images/**", "/js/**","/login-error")
+                .antMatchers("/","/login-error","/css/**", "/images/**", "/js/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated();

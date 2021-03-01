@@ -27,6 +27,7 @@ dependencies {
 	implementation 'org.webjars:jquery:3.5.0'
 	implementation 'org.webjars:bootstrap:4.4.1-1'
 	compile "org.springframework.boot:spring-boot-starter-security"
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
 }
 
 test {
