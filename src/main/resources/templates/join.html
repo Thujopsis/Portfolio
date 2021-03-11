@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <title>ログイン成功画面</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta charset="UTF-8" />
+    <title>ログイン後画面</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="UTF-8"/>
     <style type="text/css">
         form {
             border-style: solid;
@@ -15,20 +15,54 @@
             padding: 10px;
         }
     </style>
+    <link th:href="@{webjars/bootstrap/4.4.1-1/css/bootstrap.min.css}" rel="stylesheet"/>
     <script th:href="@{webjars/jquery/3.5.0/js/jquery.min.js}"></script>
     <script th:href="@{webjars/bootstrap/4.4.1-1/js/bootstrap.min.js}"></script>
-    <link th:href="@{webjars/bootstrap/4.4.1-1/css/bootstrap.min.css}" rel="stylesheet"/>
 </head>
 <body>
 ログイン後の画面のテスト。
 
 <p>ようこそ<span sec:authentication="principal.username"></span>さん</p>
 
-<div sec:authorize="hasRole('admin')">
+<div th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
     <p>今は<b>ADMIN</b>権限でログインしています。</p>
+
+    <div th:class="container">
+        <div class="row">
+            <div class="col">
+                <button type="button" href="create.html" class="btn btn-primary" th:href="@{/transitionCreate}">追加画面</button>
+            </div>
+
+            <div class="col">
+                <button type="button" href="login.html" class="btn btn-info" th:href="@{/transitionUpdate}" disabled>編集画面</button>
+            </div>
+
+            <div class="col">
+                <button type="button" href="login.html" class="btn btn-danger" th:href="@{/transitionDelete}" disabled>削除画面</button>
+            </div>
+        </div>
+    </div>
 </div>
-<div sec:authorize="hasRole('user')">
+
+<div sec:authorize="hasRole('USER')">
     <p>今は<b>USER</b>権限でログインしています。</p>
+
+    <div th:class="container">
+        <div class="row">
+            <div class="col">
+                <a href="create.html" class="btn btn-primary" th:href="@{/transitionCreate}">追加画面</a>
+            </div>
+
+            <div class="col">
+                <a href="update.html" class="btn btn-info disabled" th:href="@{/transitionUpdate}">編集画面</a>
+            </div>
+
+            <div class="col">
+                <a href="delete.html" type="button" class="btn btn-danger disabled" th:href="@{/transitionDelete}">削除画面</a>
+            </div>
+        </div>
+    </div>
 </div>
+
 </body>
 </html>
