@@ -25,6 +25,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web-services'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	implementation group: 'org.webjars', name: 'webjars-locator', version: '0.40'
 	implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
 	implementation 'org.webjars:jquery:3.5.0'
 	implementation 'org.webjars:bootstrap:4.4.1-1'

@@ -1,7 +1,9 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="ja"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <title>SpringBoot - テスト用画面</title>
+    <title>ログイン後画面</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta charset="UTF-8"/>
     <link th:href="@{/css/common.css}" rel="stylesheet" type="text/css">
@@ -9,12 +11,9 @@
     <script th:href="@{webjars/jquery/3.5.0/js/jquery.min.js}"></script>
     <script th:href="@{webjars/bootstrap/4.4.1-1/js/bootstrap.min.js}"></script>
     <script th:src="@{/js/common.js}" rel="javascript" type="text/javascript"></script>
-
 </head>
 <body>
-
-<h1 th:text="'CRUDサンプル1'">見出し1</h1>
-<a href="login.html" class="btn btn-primary" th:href="@{/login}">ログイン</a>
+<h1 th:text="'編集画面'">見出し1</h1>
 
 <main class="w-50">
 
@@ -25,6 +24,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">名前</th>
                 <th scope="col">詳細</th>
+                <th scope="col">操作</th>
             </tr>
             </thead>
             <tbody>
@@ -32,6 +32,13 @@
                 <td th:text="${list.id}"></td>
                 <td th:text="${list.name}"></td>
                 <td th:text="${list.details}"></td>
+                <td>
+                    <form action="#" th:action="@{/edit/} + ${list.id}" method="get">
+                        <button th:id="${list.id}" type="submit">
+                            編集
+                        </button>
+                    </form>
+                </td>
             </tr>
             </tbody>
         </table>

@@ -2,12 +2,17 @@ package com.Needwork.Needwork.Cotroller;
 
 import com.Needwork.Needwork.Mapper.ListDataMapper;
 import com.Needwork.Needwork.Model.FormModel;
+import com.Needwork.Needwork.Model.ListDataModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.List;
 
 @Controller
 public class CRUDController {
@@ -15,38 +20,21 @@ public class CRUDController {
     @Autowired
     ListDataMapper listDataMapper;
 
-    //追加画面への画面遷移
-    @RequestMapping(value = "/transitionCreate",method = RequestMethod.GET)
-    public String transitionCreate(@ModelAttribute FormModel formModel, Model model){
-        model.addAttribute("formModel",formModel);
-
-        return "create";
-    }
-
-    //変更画面への画面遷移
-    @RequestMapping(value = "/transitionUpdate",method = RequestMethod.GET)
-    public String transitionUpdate(Model model){
-        return "update";
-    }
-
-    //削除画面への画面遷移
-    @RequestMapping(value = "/transitionDelete",method = RequestMethod.GET)
-    public String transitionDelete(Model model){
-        return "delete";
-    }
-
 
     //追加処理本体
     @RequestMapping(value = "/create",method = RequestMethod.POST)
     public String create(@ModelAttribute FormModel formModel,Model model){
         listDataMapper.insert(formModel);
-        return "index";
+
+        return "redirect:/join";
     }
 
-    //変更処理本体
+    //編集処理本体
+    @Transactional(readOnly = false)
     @RequestMapping(value = "/update",method = RequestMethod.POST)
-    public String update(Model model){
-        return "update";
+    public String update(@ModelAttribute ListDataModel listDataModel, Model model){
+        listDataMapper.update(listDataModel);
+        return "redirect:/join";
     }
 
     //削除処理本体

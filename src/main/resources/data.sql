@@ -1,1 +1,0 @@
-insert into list (name,details) values ( 'test', 'テスト用データ')

@@ -39,6 +39,9 @@ public class IndexController {
     @RequestMapping(value = "/join",method = RequestMethod.GET)
     public String join(Model model){
         model.addAttribute("iserror",false);
+
+        List<ListDataModel> dataList = listDataMapper.selectAll();
+        model.addAttribute("dataList",dataList);
         return "join";
     }
 

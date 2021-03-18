@@ -16,4 +16,8 @@
         SELECT id,name,details FROM list
     </select>
 
+    <update id="update">
+        UPDATE list SET name = #{name}, details = #{details} WHERE id = #{id}
+    </update>
+
 </mapper>
