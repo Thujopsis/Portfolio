@@ -35,17 +35,19 @@ public class MoveCRUDController {
         return "updateList";
     }
 
-    //削除画面への画面遷移
-    @RequestMapping(value = "/delete",method = RequestMethod.GET)
-    public String delete(Model model){
-        return "delete";
-    }
-
     //編集画面遷移
     @RequestMapping(value = "/edit/{id}",method = RequestMethod.GET)
     public String edit(@PathVariable int id, Model model){
         ListDataModel selectData = listDataMapper.select(id);
         model.addAttribute("selectData",selectData);
         return "update";
+    }
+
+    //削除画面への画面遷移
+    @RequestMapping(value = "/delete",method = RequestMethod.GET)
+    public String delete(Model model){
+        List<ListDataModel> deleteList = listDataMapper.selectAll();
+        model.addAttribute("deleteList",deleteList);
+        return "delete";
     }
 }

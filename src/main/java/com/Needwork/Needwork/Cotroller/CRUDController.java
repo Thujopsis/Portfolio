@@ -25,7 +25,6 @@ public class CRUDController {
     @RequestMapping(value = "/create",method = RequestMethod.POST)
     public String create(@ModelAttribute FormModel formModel,Model model){
         listDataMapper.insert(formModel);
-
         return "redirect:/join";
     }
 
@@ -38,8 +37,9 @@ public class CRUDController {
     }
 
     //削除処理本体
-    @RequestMapping(value = "/delete",method = RequestMethod.POST)
-    public String delete(Model model){
-        return "delete";
+    @RequestMapping(value = "/delete/{id}",method = RequestMethod.POST)
+    public String delete(@PathVariable int id,Model model){
+        listDataMapper.delete(id);
+        return "redirect:/join";
     }
 }

@@ -20,4 +20,8 @@
         UPDATE list SET name = #{name}, details = #{details} WHERE id = #{id}
     </update>
 
+    <delete id="delete">
+        DELETE FROM list WHERE id = #{id}
+    </delete>
+
 </mapper>

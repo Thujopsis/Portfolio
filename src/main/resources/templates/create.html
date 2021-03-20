@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"
+<html lang="ja"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -8,21 +8,24 @@
     <meta charset="UTF-8"/>
 
     <link th:href="@{/css/common.css}" rel="stylesheet" type="text/css">
-    <link th:href="@{webjars/bootstrap/4.4.1-1/css/bootstrap.min.css}" rel="stylesheet"/>
-    <script th:href="@{webjars/jquery/3.5.0/js/jquery.min.js}"></script>
-    <script th:href="@{webjars/bootstrap/4.4.1-1/js/bootstrap.min.js}"></script>
+    <link th:href="@{webjars/bootstrap/4.6.0-1/css/bootstrap.min.css}" rel="stylesheet"/>
+    <script th:href="@{webjars/jquery/3.6.0/js/jquery.min.js}"></script>
+    <script th:href="@{webjars/bootstrap/4.6.0-1/js/bootstrap.min.js}"></script>
+    <script th:href="@{webjars/popper/1.12.9-1/js/popper.js}"></script>
+    <script th:src="@{/js/common.js}" rel="javascript" type="text/javascript"></script>
 </head>
 <body>
+<h1 th:text="追加画面"></h1>
 
 <form method="post" action="/create" th:action="@{/create}" th:object="${formModel}">
     <p>名前:
-        <input type="text" th:field="*{name}" />
+        <input type="text" th:field="*{name}"/>
     </p>
     <p>詳細:
-        <input type="text" th:field="*{details}" />
+        <input type="text" th:field="*{details}"/>
     </p>
 
-    <button class="btn btn-primary" type="submit">登録</button>
+    <input type="submit" class="btn btn-primary" value="追加" />
 </form>
 
 </body>

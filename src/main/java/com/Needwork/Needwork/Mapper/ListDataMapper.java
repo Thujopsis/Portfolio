@@ -21,4 +21,7 @@ public interface ListDataMapper {
 
     //更新処理
     void update(ListDataModel listDataModel);
+
+    //削除処理
+    void delete(int id);
 }
