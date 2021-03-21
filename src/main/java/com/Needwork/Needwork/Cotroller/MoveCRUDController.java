@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
+/*
+各CRUD画面への遷移を行うクラス
+画面遷移のみ行い、CRUDのRのみ、画面表示に必要な最低限の処理のみを行う
+ */
 @Controller
 public class MoveCRUDController {
 

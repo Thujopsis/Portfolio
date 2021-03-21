@@ -5,6 +5,10 @@ import org.springframework.lang.NonNull;
 
 import java.io.Serializable;
 
+/*
+IDを除くフォームの要素を格納するモデル
+ID以外の要素をやり取りする場合はこちらを使用する。
+ */
 public class FormModel implements Serializable {
 
     private static final long serialVersionUID = -3430611959303745513L;

@@ -3,6 +3,10 @@ package com.Needwork.Needwork.Model;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
+/*
+IDを含む全要素をやり取りするためのモデル
+リスト内のデータを列挙する形で記述する。
+ */
 public class ListDataModel {
     private int id = NumberUtils.INTEGER_ZERO;
     private String name = StringUtils.EMPTY;

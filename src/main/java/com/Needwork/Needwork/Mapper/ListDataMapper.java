@@ -7,6 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/*
+MybatisでSQLを呼ぶためのインターフェース
+SQLを記述したXMLのidとメソッド名がリンクし、処理を行う
+*/
 @Repository
 @Mapper
 public interface ListDataMapper {

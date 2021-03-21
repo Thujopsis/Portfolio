@@ -16,8 +16,8 @@ import java.util.List;
 
 
 /*
-CRUD処理の本体となるクラス。
-各処理の実際の処理をメソッド内で記述する。
+CRUD処理の本体となるクラス
+各処理の実際の処理をメソッド内で記述する
  */
 @Controller
 public class CRUDController {
