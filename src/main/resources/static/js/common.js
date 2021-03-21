@@ -1,10 +1,8 @@
-DELETE_MESSAGE = "削除してもよろしいですか？";
-
 $(document).ready(function() {
-    $('.delete-action').click(function() {
-        if(!confirm(DELETE_MESSAGE)){
-            return false;
-        }
-    });
+    $('#delete-confirm').on('show.bs.modal', function(event) {
+        var button = $(event.relatedTarget)
+        var id = button.data('id')
 
+        $('form').attr('action', '/delete/' + id);
+    })
 } );

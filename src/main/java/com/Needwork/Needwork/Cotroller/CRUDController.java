@@ -14,12 +14,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
+
+/*
+CRUD処理の本体となるクラス。
+各処理の実際の処理をメソッド内で記述する。
+ */
 @Controller
 public class CRUDController {
 
     @Autowired
     ListDataMapper listDataMapper;
-
 
     //追加処理本体
     @RequestMapping(value = "/create",method = RequestMethod.POST)
