@@ -11,6 +11,7 @@
 |---- | ----  | 
 |  SpringBoot  |  2.4.3  | 
 |  SpringSecurity  |  5  | 
+| PostgresSQL | 13 |
 |  Java  |  15  | 
 |  jquery  |  3.6.0  | 
 |  bootstrap  |  4.6.0-1  | 

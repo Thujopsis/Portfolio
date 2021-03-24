@@ -1,7 +1,7 @@
-package com.Needwork.Needwork.Cotroller;
+package com.needwork.needwork.Cotroller;
 
-import com.Needwork.Needwork.Mapper.ListDataMapper;
-import com.Needwork.Needwork.Model.ListDataModel;
+import com.needwork.needwork.Mapper.ListDataMapper;
+import com.needwork.needwork.Model.ListDataModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

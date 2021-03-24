@@ -1,7 +1,7 @@
-package com.Needwork.Needwork.Mapper;
+package com.needwork.needwork.Mapper;
 
-import com.Needwork.Needwork.Model.FormModel;
-import com.Needwork.Needwork.Model.ListDataModel;
+import com.needwork.needwork.Model.FormModel;
+import com.needwork.needwork.Model.ListDataModel;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 

@@ -5,16 +5,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="com.Needwork.Needwork.Mapper.ListDataMapper">
+<mapper namespace="com.needwork.needwork.Mapper.ListDataMapper">
     <insert id="insert">
         INSERT INTO list (name, details) VALUES (#{name}, #{details})
     </insert>
 
-    <select id="select" parameterType="int" resultType="com.Needwork.Needwork.Model.ListDataModel">
+    <select id="select" parameterType="int" resultType="com.needwork.needwork.Model.ListDataModel">
         SELECT id,name,details FROM list WHERE id = #{id}
     </select>
 
-    <select id="selectAll" resultType="com.Needwork.Needwork.Model.ListDataModel">
+    <select id="selectAll" resultType="com.needwork.needwork.Model.ListDataModel">
         SELECT id,name,details FROM list
     </select>
 

@@ -1,4 +1,4 @@
-package com.Needwork.Needwork.Model;
+package com.needwork.needwork.Model;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;

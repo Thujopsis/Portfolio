@@ -1,8 +1,8 @@
-package com.Needwork.Needwork.Cotroller;
+package com.needwork.needwork.Cotroller;
 
-import com.Needwork.Needwork.Mapper.ListDataMapper;
-import com.Needwork.Needwork.Model.FormModel;
-import com.Needwork.Needwork.Model.ListDataModel;
+import com.needwork.needwork.Mapper.ListDataMapper;
+import com.needwork.needwork.Model.FormModel;
+import com.needwork.needwork.Model.ListDataModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import java.util.List;
 
 
 /*
