@@ -20,9 +20,15 @@ public class IndexController {
     @Autowired
     ListDataMapper listDataMapper;
 
+    //ルートに遷移した場合はhomeへリダイレクトする。
+    @RequestMapping(value = "/",method = RequestMethod.GET)
+    public String index(Model model){
+        return "redirect:/home";
+    }
+
     //TOP画面
     @RequestMapping(value = "/home",method = RequestMethod.GET)
-    public String index(Model model){
+    public String home(Model model){
        List<ListDataModel> dataList = listDataMapper.selectAll();
        model.addAttribute("dataList",dataList);
         return "index";

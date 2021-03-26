@@ -7,7 +7,7 @@ services:
     depends_on:
       - db
     volumes: 
-      - "./build/libs/portfolio-0.0.1-SNAPSHOT.jar:/tmp/needwork.jar"
+      - "./build/libs/needwork-0.0.1-SNAPSHOT.jar:/tmp/needwork.jar"
     entrypoint: "java -Djava.security.egd=file:/dev/./urandom -jar /tmp/needwork.jar"
   
   db:
